@@ -13,7 +13,7 @@ import reactor.core.publisher.Flux;
 @RequestMapping("/api/alarms")
 public class AlarmController {
 
-    private final AlarmRepository repository;
+    private final AlarmRepository repository; // Due to time limitation, could not fix it, repos should be moved to service layer, not on controller.
 
     public AlarmController(
             AlarmRepository repository) {

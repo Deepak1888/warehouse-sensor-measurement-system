@@ -1,17 +1,14 @@
 package com.sms.sensor_measurement_system.controller;
 
 import com.sms.sensor_measurement_system.dto.CreateWarehouseRequest;
-import com.sms.sensor_measurement_system.dto.SensorReadingResponse;
 import com.sms.sensor_measurement_system.dto.WarehouseResponse;
 import com.sms.sensor_measurement_system.application.command.RegisterWarehouseCommand;
 import com.sms.sensor_measurement_system.application.usecase.RegisterWarehouseUseCase;
-import com.sms.sensor_measurement_system.domain.entity.Alarm;
 import com.sms.sensor_measurement_system.domain.repository.SensorReadingRepository;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -19,7 +16,7 @@ import reactor.core.publisher.Mono;
 public class WarehouseController {
 
 	private final RegisterWarehouseUseCase useCase;
-	private final SensorReadingRepository sensorReadingRepository;
+	private final SensorReadingRepository sensorReadingRepository;  // Due to time limitation, could not fix it, repos should be moved to service layer, not on controller.
 
 	public WarehouseController(RegisterWarehouseUseCase useCase, SensorReadingRepository sensorReadingRepository) {
 		this.useCase = useCase;

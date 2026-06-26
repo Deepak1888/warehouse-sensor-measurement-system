@@ -26,7 +26,7 @@ public class TemperatureUdpServer {
 
         UdpServer.create()
 
-                .port(3344)
+                .port(13344)
 
                 .handle((in, out) ->
 

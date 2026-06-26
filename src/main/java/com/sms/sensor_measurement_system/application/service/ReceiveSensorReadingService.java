@@ -33,7 +33,9 @@ implements ReceiveSensorReadingUseCase {
     @Override
     public Mono<Void> execute(
             ReceiveSensorReadingCommand command) {
-
+    	
+    	System.out.print("Processing sensor: " + command.sensorId() + "value : "+command.value());
+    	
     	SensorReading reading = new SensorReading(
                 SensorId.of(command.sensorId()),
                 command.sensorType(),
