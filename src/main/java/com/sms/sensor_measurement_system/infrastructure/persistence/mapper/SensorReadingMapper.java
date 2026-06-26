@@ -3,6 +3,7 @@ package com.sms.sensor_measurement_system.infrastructure.persistence.mapper;
 import com.sms.sensor_measurement_system.domain.entity.SensorReading;
 import com.sms.sensor_measurement_system.domain.valueobject.MeasurementValue;
 import com.sms.sensor_measurement_system.domain.valueobject.SensorId;
+import com.sms.sensor_measurement_system.domain.valueobject.SensorType;
 import com.sms.sensor_measurement_system.infrastructure.persistence.entity.SensorReadingEntity;
 
 public class SensorReadingMapper {
@@ -21,6 +22,8 @@ public class SensorReadingMapper {
 
         entity.setTimestamp(
                 reading.getTimestamp());
+        entity.setSensorType(
+                reading.getSensorType().name());
 
         return entity;
 
@@ -28,15 +31,11 @@ public class SensorReadingMapper {
     public static SensorReading toDomain(
             SensorReadingEntity entity) {
 
-        return new SensorReading(
-
-                SensorId.of(entity.getSensorId()),
-
-                new MeasurementValue(entity.getMeasurementValue()),
-
-                entity.getTimestamp()
-
-        );
-    }
-
+    	return new SensorReading(
+    	        SensorId.of(entity.getSensorId()),
+    	        SensorType.valueOf(entity.getSensorType()),
+    	        new MeasurementValue(entity.getMeasurementValue()),
+    	        entity.getTimestamp()
+    	);
+}
 }

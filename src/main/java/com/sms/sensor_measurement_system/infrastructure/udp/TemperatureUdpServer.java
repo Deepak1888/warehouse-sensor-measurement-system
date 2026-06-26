@@ -62,7 +62,7 @@ public class TemperatureUdpServer {
 
                         parsed.value(),
 
-                        sensorType
+                        parsed.sensorType()
 
                 ));
 

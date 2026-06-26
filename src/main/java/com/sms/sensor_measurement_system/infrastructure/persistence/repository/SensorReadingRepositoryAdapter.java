@@ -6,6 +6,8 @@ import com.sms.sensor_measurement_system.domain.repository.SensorReadingReposito
 import com.sms.sensor_measurement_system.domain.repository.SpringSensorReadingRepository;
 import com.sms.sensor_measurement_system.infrastructure.persistence.mapper.SensorReadingMapper;
 import org.springframework.stereotype.Repository;
+
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Repository
@@ -24,10 +26,15 @@ public class SensorReadingRepositoryAdapter
     public Mono<SensorReading> save(SensorReading reading) {
 
         return repository
-
                 .save(SensorReadingMapper.toEntity(reading))
-
                 .map(SensorReadingMapper::toDomain);
+    }
 
+    @Override
+    public Flux<SensorReading> findAll() {
+
+        return repository
+                .findAll()
+                .map(SensorReadingMapper::toDomain);
     }
 }

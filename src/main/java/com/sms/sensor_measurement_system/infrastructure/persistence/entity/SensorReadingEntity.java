@@ -8,7 +8,7 @@ import org.springframework.data.relational.core.mapping.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-@Table("sensor_reading")
+@Table("SENSOR_READING")
 public class SensorReadingEntity {
 
     @Id

@@ -7,10 +7,14 @@ import org.springframework.stereotype.Repository;
 
 import com.sms.sensor_measurement_system.domain.entity.Alarm;
 
+
+
+
 @Repository
 public class AlarmRepository {
 
-    private final List<Alarm> alarms = new CopyOnWriteArrayList<>();
+    private final List<Alarm> alarms =
+            new CopyOnWriteArrayList<>();
 
     public void save(Alarm alarm) {
 

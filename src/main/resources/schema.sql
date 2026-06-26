@@ -12,7 +12,7 @@ CREATE TABLE sensor_reading (
 
     sensor_id VARCHAR(50),
 
-    measurementValue DOUBLE,
+    measurement_value DOUBLE,
 
     timestamp TIMESTAMP,
 

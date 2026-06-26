@@ -4,7 +4,7 @@ package com.sms.sensor_measurement_system.infrastructure.persistence.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("warehouse")
+@Table("WAREHOUSE")
 public class WarehouseEntity {
 
     @Id
